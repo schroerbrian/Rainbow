@@ -1,1 +1,1 @@
-A Rails app to help consumers look up PLU codes to identify the items they've purchased from Rainbow Grocery.
+A Rails app that allows consumers to use OCR technology to look up PLU codes and identify the items they've purchased from Rainbow Grocery.

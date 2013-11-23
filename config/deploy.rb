@@ -10,7 +10,7 @@ ssh_options[:forward_agent] = true
 set :ssh_options, {:forward_agent => true}
 default_run_options[:pty] = true  # Must be set for the password prompt from git to work
 #efault_run_options[:shell] = 'bash'
-ssh_options[:keys] = ["~/Downloads/rainbow.pem"]
+ssh_options[:keys] = ["~/Projects/rainbow.pem"]
 ssh_options[:keys_only] = true
 set :keep_releases, 8
 

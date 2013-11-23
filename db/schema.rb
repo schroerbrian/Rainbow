@@ -16,9 +16,10 @@ ActiveRecord::Schema.define(version: 20131120205748) do
   create_table "plu_codes", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "image"
     t.integer  "number"
     t.string   "description"
-    t.decimal  "flag"
+    t.integer  "flag"
   end
 
 end

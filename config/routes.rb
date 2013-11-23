@@ -1,5 +1,6 @@
 Rainbow::Application.routes.draw do
   
-  get "/" => "home#index"
+  resources :plu_codes
+  root :to => "plu_codes#index"
 
 end

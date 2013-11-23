@@ -6,27 +6,41 @@
   </div>
 </div>
 
-<div class="row ma-btme">
+<!-- <div class="row ma-btme">
   <div class="large-4 large-centered columns">
     <div class="row collapse">
       <div class="large-4 large-centered columns">
+        
         <input type="file" capture="camera" name="img" accept="image/*" id="takePictureField">
+        <input type="submit" value="Submit" id="pluSubmit">
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+
+<%= form_for @plu do |f| %>
+  <%= f.file_field :image, "capture" => "camera" %>
+  <br>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
 
 <div class="row">
   <div class="large-4 large-centered columns">
     <div class="row collapse">
       <div class="large-8 columns">
-        <input type="text" placeholder="Product Lookup Code">
-      </div>
-      <div class="large-4 columns">
-        <a href="#" class="button prefix">Submit</a>
+        <form action='/' method='get' >
+          <input type="text" name='number' placeholder="Product Lookup Code">
+          <input type="submit" name="Search">
+        </form>
       </div>
     </div>
   </div>
 </div>
 
 <img id="yourimage">
+
+<%- if @codes.present? -%>
+  <%= results(@codes) -%>
+<%- end %>

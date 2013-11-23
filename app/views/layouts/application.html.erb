@@ -9,8 +9,6 @@
   	<!-- Uncomment to make IE8 render like IE7 -->
   	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="text/javascript" charset="utf-8" src="quantize.js"></script>
-    <script type="text/javascript" charset="utf-8" src="color-thief.js"></script>
 
   	<title><%= content_for?(:title) ? yield(:title) : "Rainbow PLU Look-up" %></title>
 
@@ -20,10 +18,10 @@
   </head>
 
   <body>
+    <%= javascript_include_tag "application" %>
 
     <%= yield %>
 
     
-    <%= javascript_include_tag "application" %>
   </body>
 </html>

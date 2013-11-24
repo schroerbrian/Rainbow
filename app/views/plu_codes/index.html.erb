@@ -1,46 +1,38 @@
+<div class="red-border"></div>
+<div class="indigo-border"></div>
+<div class="yellow-border ma-btlg"></div>
 
-<div class="row">
-  <div class="large-8 large-centered columns">
-    <h1 class="al-c ma-btsm">Enter PLU</h1>
-    <h4 class="al-c subheader">Take a photo or enter manually</h4>    
+<div class="container">   
+  <h1 class="al-c ma-btsm">RAINBOW-CR</h1>
+  <h4 class="al-c ma-zero">Rainbow Grocery product lookup</h4>
+
+  <div class="al-c ma-tplg">
+    <p class="ma-btme">Can't remember what you bought? <br>Enter the product code.</p>
+    <form action='/' method='get' >
+      <input type="text" name='number' placeholder="Product Lookup Code" class="input-text">
+      <input type="submit" name="Search" class="input-submit">
+    </form>
   </div>
+
+  <div class="al-c ma-tplg">
+    <p class="ma-btme">Take a photo of a product code <br> to add it to our database.</p>
+    <%= form_for @plu do |f| %>
+      <%= f.file_field :image, "capture" => "camera", :class => "input-file" %>
+    </br>
+      <%= f.submit class: "btn input-submit ma-tpme" %>
+    <% end %>
+  </div>
+
+  <div class="al-c">
+    <% if flash[:success] %>
+      <p class="flash-notice"><%= flash[:success] %></p>
+    <% end %>
+  </div>
+
+  <img id="yourimage">
+
+  <%- if @codes.present? -%>
+    <%= results(@codes) -%>
+  <%- end %>
+
 </div>
-
-<!-- <div class="row ma-btme">
-  <div class="large-4 large-centered columns">
-    <div class="row collapse">
-      <div class="large-4 large-centered columns">
-        
-        <input type="file" capture="camera" name="img" accept="image/*" id="takePictureField">
-        <input type="submit" value="Submit" id="pluSubmit">
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-<%= form_for @plu do |f| %>
-  <%= f.file_field :image, "capture" => "camera" %>
-  <br>
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
-
-
-<div class="row">
-  <div class="large-4 large-centered columns">
-    <div class="row collapse">
-      <div class="large-8 columns">
-        <form action='/' method='get' >
-          <input type="text" name='number' placeholder="Product Lookup Code">
-          <input type="submit" name="Search">
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<img id="yourimage">
-
-<%- if @codes.present? -%>
-  <%= results(@codes) -%>
-<%- end %>

@@ -1,0 +1,105 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+/*------------------------------------*\
+    $STYLES
+\*------------------------------------*/
+
+html {
+  background: rgb(249,249,249);
+}
+
+body {
+  color: #767c8d;
+  font-family: "Varela Round", "HelveticaNeue", Helvetica, sans-serif;
+  margin: 0;
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Alignment
+  ========================================================================== */
+  .al-c { text-align: center; }
+
+/* Margins and Padding
+  ========================================================================== */
+  .ma-tpsm { margin-top: 0.2em; }
+  .ma-btsm { margin-bottom: 0.2em; }
+
+  .ma-btme { margin-bottom: 0.5em; }
+  .ma-tpme { margin-top: 0.5em; }
+
+  .ma-tplg { margin-top: 1.8em; }
+  .ma-btlg { margin-bottom: 1.8em; }
+
+  .ma-zero { margin: 0; }
+
+
+/* Forms and buttons
+  ========================================================================== */
+  .input-text, .input-submit, textarea, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px inset buttonface;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #666;
+    padding: 5px 7px;
+    resize: none;
+  }
+
+  .input-submit, .btn {
+    border: 1px outset buttonface;
+    background: rgb(230,230,230);
+  }
+
+  .input-file {
+    padding: 0.3em;
+    border: 1px solid rgb(200,200,200);
+  }
+
+/*------------------------------------*\
+    $TYPE
+\*------------------------------------*/
+h1,h2,h3,h4,h5,h6 { color: #444444; } 
+
+.subheader {
+}
+
+
+/*------------------------------------*\
+    $Specific elements
+\*------------------------------------*/
+
+.container:before {
+  content: "";
+  // margin-top: 50px;
+  display: block;
+}
+
+.red-border, .yellow-border, .indigo-border {
+  width: 33.33%;
+  float: left;
+  height: 8px;
+}
+
+.red-border { background: #c0392b; }
+
+.yellow-border { background: #34495e; }
+
+.indigo-border { background: #8e44ad; }
+
+

@@ -3,7 +3,7 @@ class PluCode < ActiveRecord::Base
 
   after_create :queue_processing
   
-  def process(text)    
+  def process!(text)    
     self.number = text.scan(/[0-9]+/).first
     self.description = text.gsub(/#{self.number}/, '')
     puts text
@@ -11,7 +11,7 @@ class PluCode < ActiveRecord::Base
   end 
 
   def queue_processing
-    Resque.enqueue Processor, id
+    Resque.enqueue(Processor, id)
   end
 
 end

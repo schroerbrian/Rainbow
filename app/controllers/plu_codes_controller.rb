@@ -13,7 +13,7 @@ class PluCodesController < ApplicationController
   def create
     PluCode.create(create_params)
     redirect_to :plu_codes
-    flash[:success] = "Your product code has been submitted."
+    flash[:success] = "Your product code has been submitted. Should be searchable in a few!"
   end 
   
 

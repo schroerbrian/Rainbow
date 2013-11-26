@@ -6,7 +6,7 @@ class PluCode < ActiveRecord::Base
   def process_image
     puts Rails.root
     puts self.image.path
-    text = TESSERACT.text_for(self.image.path).strip
+    text = ABBYY.run_process_image self.image.path
     self.number = text.scan(/[0-9]+/).first
     self.description = text.gsub(/#{self.number}/, '')
     puts text

@@ -12,7 +12,7 @@ class Processor
       client.get_task_status
     end
     if client.task[:status] == 'Completed'      
-      product.process!(client.get)
+      product.process!(client.get.encode("UTF-8", {:invalid => :replace, :undef => :replace, :replace => ''}))
     else
       Rails.logger.info "Task did not complete successfully. Why?"
     end

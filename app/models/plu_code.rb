@@ -1,16 +1,17 @@
 class PluCode < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
-  after_create :process_image
+  after_create :queue_processing
   
-  def process_image
-    puts Rails.root
-    puts self.image.path
-    text = TESSERACT.text_for(self.image.path).strip
+  def process!(text)    
     self.number = text.scan(/[0-9]+/).first
     self.description = text.gsub(/#{self.number}/, '')
     puts text
     self.save
   end 
+
+  def queue_processing
+    Resque.enqueue(Processor, id)
+  end
 
 end

@@ -3,7 +3,7 @@ module PluCodesHelper
   def results(codes)
     results = ''
     codes.each do |c|
-      results << "#{c.number.to_s}: #{c.description}" + tag("br")
+      results << image_tag(c.image)
     end
     results.html_safe
   end

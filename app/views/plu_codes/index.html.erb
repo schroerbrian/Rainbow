@@ -15,11 +15,17 @@
   </div>
 
   <div class="al-c ma-tplg">
-    <p class="ma-btme">Take a photo of a product code <br> to add it to our database.</p>
+    <p class="ma-btme">
     <%= form_for @plu do |f| %>
+      Take a photo of a Rainbow Grocery product label:
       <%= f.file_field :image, "capture" => "camera", :class => "input-file" %>
-    </br>
+    <br />
+      Tell us the four digit code (or don't, and we'll ask the computer to read for itself):
+      <%= f.text_field :number, :placeholder => "Product Number (optional)" -%>
+    <br />
       <%= f.submit class: "btn input-submit ma-tpme" %>
+    <br />
+      We'll make it searchable.
     <% end %>
   </div>
 

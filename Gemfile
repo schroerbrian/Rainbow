@@ -21,4 +21,5 @@ end
 gem 'carrierwave'
 gem 'abbyy', :github => 'madwork/abbyy'
 gem 'resque'
+gem 'powder'
 
